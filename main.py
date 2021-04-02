@@ -1,6 +1,5 @@
-import requests
-from bs4 import BeautifulSoup
+from indeed import extract_indeed_pages,extract_indeed_jobs
 
-indeed_result = requests.get("https://kr.indeed.com/%EC%B7%A8%EC%97%85?q=python&limit=50")
+last_page = extract_indeed_pages()
 
-print(indeed_result.text)
+indeed_jobs = extract_indeed_jobs(last_page)
